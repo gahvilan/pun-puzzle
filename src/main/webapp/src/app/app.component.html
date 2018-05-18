@@ -1,0 +1,17 @@
+
+<h1>Target ({{textValue}})</h1>
+<input #textbox type="text" [(ngModel)]="textValue" required>
+<button (click)="doSearch(textbox.value)">Do Search</button>
+<button (click)="textValue=''">Clear</button>
+
+<h2>Template Reference Variable</h2>
+Type: '{{textbox.type}}', required: '{{textbox.hasAttribute('required')}}',
+upper: '{{textbox.value.toUpperCase()}}'
+
+<pre>{{log}}</pre>
+<pre>
+  <span>Results: </span>
+    <li *ngFor="let res of result">
+      {{ res }}
+    </li>
+</pre>
